@@ -12,12 +12,10 @@
         </form>
         
         <?php
-            echo "Megan, My first website!<br />";
-
-            if( $_GET["Email"] || $_GET["Password"] ) {
-                echo "Welcome ". $_GET['Email']. "<br />";
-                exit();
-            }
+        	$yes = 'yes';
+        	if($yes != NULL){
+        		echo '<h1>GAAAAAAY</h1>';
+        	}
         ?>  
     </body>
 </html>
