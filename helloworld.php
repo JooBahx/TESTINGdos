@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
     <head>
-        
         <title></title>
     </head>
     <body>
@@ -12,10 +11,26 @@
         </form>
         
         <?php
-        	$yes = 'yes';
-        	if($yes != NULL){
-        		echo '<h1>GAAAAAAY</h1>';
-        	}
+            $servernamesql = "localhost";
+            $usernamesql = "uroot";
+            $passwordsql = "proot";
+
+            //Create connection
+            $conn = mysqli_connect($servernamesql, $usernamesql, $passwordsql);
+
+            // Check connection
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+            
+            echo "<br /> Connected successfully";
+        
+            if( $_GET["Email"] || $_GET["Password"] ) {
+               // echo "Welcome ". $_GET['Email']. "<br />";
+                exit();
+        
+                
+            }
         ?>  
     </body>
 </html>
