@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<?php 
-// echo "Hello World!";
-
-$wow = 'i love php';
-
-if($wow != NULL) {
-	print '<h1>' . $wow . '</h1>';
-}
-
-?>
-=======
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,4 +21,5 @@ if($wow != NULL) {
         ?>  
     </body>
 </html>
->>>>>>> origin/master
+
+
