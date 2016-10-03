@@ -11,33 +11,24 @@
         </form>
         
         <?php
-            $servernamesql = "localhost";
-            $usernamesql = "root";
-            $passwordsql = "password";
-            $email = "email";
-
-            //Create connection
-            $conn = mysql_connect($servernamesql, $usernamesql, $passwordsql);
-            
-            mysql_select_db($email,$conn);
-            $query = "SELECT * FROM $user";
-            $result = mysql_query($query);
-            
-            if($result) {
-                while($row = mysql_fetch_array($result)){
-                    $name = $row["$yourfield"];
-                    echo "Name: " . $name;  
-                }
-            }
-            
-            
-            
-            echo "Connected successfully";
-            
-            mysql_close($conn);
-            echo "ASDF";
+            ini_set('display_startup_errors',1);
+            ini_set('display_errors',1);
+            error_reporting(-1);
         
-            if( $_GET["Email"] || $_GET["Password"] ) {
+            $user = 'root';
+            $password = 'root';
+            $db = 'users';
+            $host = 'localhost';
+            $port = 3306;
+
+            $link = mysqli_init();
+            $success = mysqli_real_connect($link, $host, $user, $password, $db,$port);
+        
+            echo "Connected successfully <br />";
+            
+            echo "ASDF <br />";
+        
+            if($_GET["Email"] || $_GET["Password"] ) {
                 echo "Welcome ". $_GET['Email']. "<br />";
                 exit();
             }
